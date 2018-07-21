@@ -4,7 +4,8 @@ import modestasnd.entities.Student;
 
 import java.util.List;
 
-class HeapSort implements Sorter {
+public class MergeSort implements Sorter {
+    @Override
     public List<Student> sort(List<Student> students) {
         //TODO: implement
         return students;

@@ -39,6 +39,7 @@ public class MainFrame {
         submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //TODO: sort input
 //                createIban((String) comboBox.getSelectedItem(), textField.getText());
             }
         });

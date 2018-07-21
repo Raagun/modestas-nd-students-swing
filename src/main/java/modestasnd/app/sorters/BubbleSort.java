@@ -6,29 +6,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class BubbleSort {
+class BubbleSort implements Sorter {
 
-    List<Student> sort(List<Student> students) {
-        final List<Student> copiedList = new ArrayList<>();
-        copiedList.add(new Student("X", 0.0));
-        copiedList.addAll(students);
+    public List<Student> sort(List<Student> students) {
+        final List<Student> copiedList = new ArrayList<>(students);
+        Student temp;
+        for (int i = 0; i < copiedList.size() - 1; i++) {
 
-        final List<Student> bubbleSorted = new ArrayList<>();
-
-        copiedList.stream()
-                .reduce((c, e) ->
-                        {
-                            if ( c.getPerformance() > e.getPerformance() ){
-                                bubbleSorted.add(c);
-                                return e;
-                            }
-                            else
-                            {
-                                bubbleSorted.add(e);
-                                return c;
-                            }
-                        }
-                );
-        return bubbleSorted;
+            for (int j = 1; j < copiedList.size() - i; j++) {
+                if (copiedList.get(j - 1).compareTo(copiedList.get(j)) == 1) {
+                    temp = copiedList.get(j - 1);
+                    copiedList.set(j - 1, copiedList.get(j));
+                    copiedList.set(j, temp);
+                }
+            }
+        }
+        return copiedList;
     }
 }

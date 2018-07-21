@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class StudentTest {
 
@@ -31,5 +32,10 @@ public class StudentTest {
         assertEquals("A", input.get(0).getName());
         assertEquals("C", input.get(1).getName());
         assertEquals("B", input.get(2).getName());
+    }
+
+    @Test
+    public void should_equal_correct(){
+        assertTrue(new Student("A", 8.5).equals(new Student("A", 8.5)));
     }
 }

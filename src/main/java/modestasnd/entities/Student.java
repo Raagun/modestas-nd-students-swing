@@ -1,6 +1,6 @@
 package modestasnd.entities;
 
-public class Student implements Comparable{
+public class Student implements Comparable {
     private String name;
     private Double performance;
 
@@ -38,8 +38,13 @@ public class Student implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        if(o instanceof Student)
+        if (o instanceof Student)
             return ((Student) o).performance.compareTo(performance);
         throw new IllegalArgumentException();
+    }
+
+    @Override
+    public String toString() {
+        return name + "," + performance;
     }
 }
